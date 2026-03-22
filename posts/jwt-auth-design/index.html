@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JWT 인증 설계 | Placefolio 기술 블로그</title>
+    <title>JWT Auth Design | Placefolio Journal</title>
     <meta
       name="description"
-      content="Placefolio 백엔드에서 예측 가능한 검증을 위한 JWT 클레임 설계를 정리한 글."
+      content="Designing JWT claims for predictable validation in the Placefolio backend."
     />
     <link rel="stylesheet" href="/styles/site.css" />
   </head>
@@ -15,61 +15,62 @@
       <header class="site-header">
         <a class="brand" href="/">Placefolio</a>
         <nav class="site-nav" aria-label="Main">
-          <a href="/posts/">글 목록</a>
-          <a href="/#focus">소개</a>
-          <a href="/#notes">기록</a>
+          <a href="/posts/">Posts</a>
+          <a href="/#focus">Focus</a>
+          <a href="/#notes">Notes</a>
         </nav>
       </header>
 
       <main class="article-layout">
         <article class="article">
-          <p class="eyebrow">보안 · 2026년 3월 22일</p>
-          <h1>운영에서 평범하게 유지되는 JWT 클레임 설계</h1>
+          <p class="eyebrow">Security · March 22, 2026</p>
+          <h1>JWT claims that stay boring in production</h1>
           <p class="article-lede">
-            토큰 설계의 핵심은 놀랄 일을 줄이는 데 있습니다. 작은 클레임
-            집합, 엄격한 검증 규칙, 단일 issuer 정책은 복잡한 플래그를 길게
-            늘어놓는 것보다 훨씬 실용적입니다.
+            Token design is mostly about removing surprises. A small claim set,
+            strict validation rules, and a single issuer policy do more than a
+            long list of clever flags.
           </p>
 
-          <h2>최소한으로 유용한 클레임 집합</h2>
+          <h2>Minimum useful claim set</h2>
           <p>
-            API 중심 백엔드에서 정말 자주 필요한 클레임은 단순합니다. `sub`,
-            `iss`, `aud`, `iat`, `nbf`, `exp` 정도면 충분한 경우가 많습니다.
-            누가 발급했고 누구를 위한 토큰이며 언제부터 언제까지 유효한지
-            명확해지면 시간 기반 검증도 훨씬 추적하기 쉬워집니다.
+            For an API-first backend, the claims that usually matter are
+            straightforward: `sub`, `iss`, `aud`, `iat`, `nbf`, and `exp`. The
+            identity is clear, the token source is explicit, and time-based
+            checks stay auditable.
           </p>
 
-          <h2>토큰에 과하게 싣지 말아야 할 것</h2>
+          <h2>What not to overload into the token</h2>
           <p>
-            역할, 기능 플래그, 워크스페이스별 상태값은 토큰 수명보다 더 빨리
-            낡을 수 있습니다. 서버가 그 값을 자주 의심해야 한다면, 애초에
-            토큰 안의 정적인 정보로 믿지 않는 편이 맞습니다.
+            Roles, feature flags, and workspace-specific state can become stale
+            faster than token lifetimes suggest. If the server must frequently
+            question that data, it should probably not trust it as static token
+            content.
           </p>
 
-          <h2>검증 과정은 체크리스트처럼 읽혀야 합니다</h2>
+          <h2>Validation should read like a checklist</h2>
           <p>
-            요청 처리는 검증이 기계적으로 흘러갈수록 쉬워집니다. 서명을 확인하고,
-            issuer를 확인하고, audience를 확인하고, 시간 관련 클레임을 확인한
-            다음에야 애플리케이션 권한 맥락을 불러오는 순서가 좋습니다.
+            Request handling becomes easier when validation remains mechanical:
+            verify signature, verify issuer, verify audience, verify clock-based
+            claims, and only then load application-level authorization context.
           </p>
 
           <blockquote>
-            지루한 인증은 장점이다. 거절 사유를 한 문장으로 설명할 수 있어야
-            운영 중 장애 대응도 쉬워진다.
+            Boring auth is a feature. If engineers can explain rejection logic in
+            one breath, incident handling gets materially easier.
           </blockquote>
 
-          <h2>이게 Placefolio에서 중요한 이유</h2>
+          <h2>Why this matters for Placefolio</h2>
           <p>
-            Placefolio에는 앞으로 협업, 초대, 프로젝트 공유 권한이 들어올
-            가능성이 큽니다. JWT 클레임을 좁게 유지해야 인증의 책임이 권한
-            문제까지 너무 일찍 삼켜버리는 일을 막을 수 있습니다.
+            The product will likely gain collaboration, invitation, and shared
+            project access. Keeping JWT claims narrow prevents authentication
+            concerns from swallowing authorization concerns too early.
           </p>
         </article>
       </main>
 
       <footer class="site-footer">
-        <p>Placefolio 기술 블로그</p>
-        <p><a href="/posts/">글 목록으로 돌아가기</a></p>
+        <p>Placefolio Journal</p>
+        <p><a href="/posts/">Back to archive</a></p>
       </footer>
     </div>
   </body>

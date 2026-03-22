@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>글 목록 | Placefolio 기술 블로그</title>
+    <title>Posts | Placefolio Journal</title>
     <meta
       name="description"
-      content="Placefolio의 기술 기록, 아키텍처 판단, 제품 설계 메모를 모아둔 글 목록입니다."
+      content="Archive of Placefolio engineering notes, architecture decisions, and product mechanics."
     />
     <link rel="stylesheet" href="/styles/site.css" />
   </head>
@@ -15,54 +15,54 @@
       <header class="site-header">
         <a class="brand" href="/">Placefolio</a>
         <nav class="site-nav" aria-label="Main">
-          <a href="/posts/">글 목록</a>
-          <a href="/#focus">소개</a>
-          <a href="/#notes">기록</a>
+          <a href="/posts/">Posts</a>
+          <a href="/#focus">Focus</a>
+          <a href="/#notes">Notes</a>
         </nav>
       </header>
 
       <main>
         <section class="archive-hero">
-          <p class="eyebrow">아카이브</p>
-          <h1>하나의 판단을 하나의 글로 남깁니다.</h1>
+          <p class="eyebrow">Archive</p>
+          <h1>Engineering notes, one decision at a time.</h1>
           <p class="lede">
-            Placefolio 뒤에 있는 시스템 구조와 제품 흐름을 짧지만 오래 참고할
-            수 있는 글로 정리합니다.
+            Short, durable writing about the systems and workflows behind
+            Placefolio.
           </p>
         </section>
 
         <section class="archive-list">
           <article class="archive-item">
-            <p class="archive-meta">2026년 3월 22일 · 아키텍처</p>
+            <p class="archive-meta">March 22, 2026 · Architecture</p>
             <h2>
               <a href="/posts/system-architecture-notes/">
-                넓게 벌리기 전에 좁게 고정하기: Placefolio 초기 백엔드가 단순해야 하는 이유
+                Starting narrow: why Placefolio needs a calm backend before a wide feature set
               </a>
             </h2>
             <p>
-              인증, 프로젝트, 리비전, 멤버십을 중심으로 첫 백엔드 범위를 어떻게
-              잡아야 하는지 정리한 글입니다.
+              Scoping the first backend around auth, projects, revisions, and
+              memberships without overfitting to future complexity.
             </p>
           </article>
 
           <article class="archive-item">
-            <p class="archive-meta">2026년 3월 22일 · 보안</p>
+            <p class="archive-meta">March 22, 2026 · Security</p>
             <h2>
               <a href="/posts/jwt-auth-design/">
-                운영에서 평범하게 유지되는 JWT 클레임 설계
+                JWT claims that stay boring in production
               </a>
             </h2>
             <p>
-              예측 가능한 검증, 분명한 책임 경계, 단순한 디버깅을 위한 최소
-              토큰 구조를 다룹니다.
+              A minimal token structure for predictable validation, clean
+              ownership boundaries, and easier debugging.
             </p>
           </article>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p>Placefolio 기술 블로그</p>
-        <p><a href="/">홈으로 돌아가기</a></p>
+        <p>Placefolio Journal</p>
+        <p><a href="/">Return to the homepage</a></p>
       </footer>
     </div>
   </body>

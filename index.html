@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Placefolio 기술 블로그</title>
+    <title>Placefolio Journal</title>
     <meta
       name="description"
-      content="Placefolio의 제품 판단, 아키텍처 기록, 현장 중심 설계 메모를 담는 기술 블로그."
+      content="Placefolio engineering journal for product decisions, architecture notes, and field-driven design."
     />
     <link rel="stylesheet" href="/styles/site.css" />
   </head>
@@ -15,24 +15,24 @@
       <header class="site-header">
         <a class="brand" href="/">Placefolio</a>
         <nav class="site-nav" aria-label="Main">
-          <a href="/posts/">글 목록</a>
-          <a href="#focus">소개</a>
-          <a href="#notes">기록</a>
+          <a href="/posts/">Posts</a>
+          <a href="#focus">Focus</a>
+          <a href="#notes">Notes</a>
         </nav>
       </header>
 
       <main>
         <section class="hero">
           <div class="hero-copy">
-            <p class="eyebrow">기술 블로그</p>
-            <h1>장소와 방문, 판단의 흐름을 기록하는 제품을 만듭니다.</h1>
+            <p class="eyebrow">Engineering Journal</p>
+            <h1>Building a field notebook for places, visits, and decisions.</h1>
             <p class="lede">
-              Placefolio를 만들며 쌓이는 제품 판단, 백엔드 설계, 모바일
-              구현 고민, 그리고 실제 사용 흐름에 대한 메모를 남깁니다.
+              Product thinking, backend architecture, mobile tradeoffs, and the
+              quiet mechanics behind Placefolio.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="/posts/">글 보러 가기</a>
-              <a class="button button-secondary" href="#featured">대표 글 보기</a>
+              <a class="button button-primary" href="/posts/">Read the journal</a>
+              <a class="button button-secondary" href="#featured">See featured notes</a>
             </div>
           </div>
 
@@ -42,44 +42,44 @@
             <div class="signal-orbit signal-orbit-b"></div>
             <div class="signal-card signal-card-a">
               <span>API</span>
-              <strong>JWT 인증 경계</strong>
+              <strong>JWT boundaries</strong>
             </div>
             <div class="signal-card signal-card-b">
               <span>Android</span>
-              <strong>현장 중심 방문 기록</strong>
+              <strong>Offline-first visit logs</strong>
             </div>
             <div class="signal-card signal-card-c">
-              <span>제품</span>
-              <strong>부동산 판단 기록 모델</strong>
+              <span>Product</span>
+              <strong>Real-estate memory model</strong>
             </div>
           </div>
         </section>
 
         <section class="split-section" id="focus">
           <div>
-            <p class="section-kicker">이 블로그에서 다루는 것</p>
-            <h2>홍보보다 오래 남는 기술 기록을 더 많이 남기려 합니다.</h2>
+            <p class="section-kicker">What this blog covers</p>
+            <h2>Fewer announcements. More engineering notes that age well.</h2>
           </div>
           <div class="focus-list">
             <article>
-              <h3>아키텍처</h3>
+              <h3>Architecture</h3>
               <p>
-                어떤 선택을 먼저 고정하고 무엇을 뒤로 미루는지, 그리고 왜
-                시스템 경계를 일부러 좁게 유지하는지 정리합니다.
+                Why certain tradeoffs win early, what we defer, and where system
+                boundaries stay intentionally narrow.
               </p>
             </article>
             <article>
-              <h3>제품 구조</h3>
+              <h3>Product mechanics</h3>
               <p>
-                방문, 동네 비교, 최종 판단 같은 사용 흐름이 실제 데이터 모델을
-                어떻게 바꾸는지 다룹니다.
+                How user behavior around visits, neighborhoods, and decisions
+                shapes the actual data model.
               </p>
             </article>
             <article>
-              <h3>구현 메모</h3>
+              <h3>Build notes</h3>
               <p>
-                백엔드 API, Android 흐름, 인증, 배포처럼 실제 구현 중 만나는
-                문제와 해결 과정을 남깁니다.
+                Tactical implementation logs from backend APIs, Android flows,
+                auth, and release infrastructure.
               </p>
             </article>
           </div>
@@ -87,92 +87,91 @@
 
         <section class="featured-section" id="featured">
           <div class="section-heading">
-            <p class="section-kicker">대표 글</p>
-            <h2>초기 설계에서 먼저 정리한 판단들입니다.</h2>
+            <p class="section-kicker">Featured</p>
+            <h2>First notes from the build.</h2>
           </div>
 
           <article class="featured-story">
             <div class="featured-meta">
-              <span>2026년 3월 22일</span>
-              <span>아키텍처</span>
+              <span>March 22, 2026</span>
+              <span>Architecture</span>
             </div>
             <h3>
               <a href="/posts/system-architecture-notes/">
-                넓게 벌리기 전에 좁게 고정하기: Placefolio 초기 백엔드가 단순해야 하는 이유
+                Starting narrow: why Placefolio needs a calm backend before a wide feature set
               </a>
             </h3>
             <p>
-              제품의 형태가 굳기 전까지 인증, 프로젝트 저장, 리비전 구조를
-              의도적으로 단순하게 유지하려는 판단을 정리한 글입니다.
+              A first-pass decision log on keeping auth, project storage, and
+              revisions intentionally simple while the product shape hardens.
             </p>
           </article>
 
           <article class="featured-story">
             <div class="featured-meta">
-              <span>2026년 3월 22일</span>
-              <span>보안</span>
+              <span>March 22, 2026</span>
+              <span>Security</span>
             </div>
             <h3>
               <a href="/posts/jwt-auth-design/">
-                운영에서 평범하게 유지되는 JWT 클레임 설계
+                JWT claims that stay boring in production
               </a>
             </h3>
             <p>
-              토큰 설계는 검증 과정이 예측 가능할 때만 의미가 있습니다. 이
-              글은 최소 클레임 구성과 꼭 필요한 검증 규칙에 집중합니다.
+              Token design is only useful when validation stays predictable.
+              This note frames the minimum claim set and the checks that matter.
             </p>
           </article>
         </section>
 
         <section class="notes-section" id="notes">
           <div class="section-heading">
-            <p class="section-kicker">최근 기록</p>
-            <h2>지금 정리하고 있는 생각들입니다.</h2>
+            <p class="section-kicker">Current notes</p>
+            <h2>Recent lines of thought.</h2>
           </div>
 
           <div class="timeline">
             <article>
-              <p class="timeline-date">백엔드</p>
-              <h3><a href="/posts/system-architecture-notes/">시스템 아키텍처 메모</a></h3>
+              <p class="timeline-date">Backend</p>
+              <h3><a href="/posts/system-architecture-notes/">System architecture notes</a></h3>
               <p>
-                프로젝트, 리비전, 멤버십과 그 주변 API 책임 범위를 어디까지 둘지
-                정리한 기록입니다.
+                Core domain edges for projects, revisions, members, and the API
+                responsibilities around them.
               </p>
             </article>
             <article>
-              <p class="timeline-date">보안</p>
-              <h3><a href="/posts/jwt-auth-design/">JWT 인증 설계</a></h3>
+              <p class="timeline-date">Security</p>
+              <h3><a href="/posts/jwt-auth-design/">JWT auth design</a></h3>
               <p>
-                issuer, audience, 만료 시간처럼 요청 처리에서 애매함을 없애는
-                기준을 정리합니다.
+                Token issuer, audience, and expiration decisions that remove
+                ambiguity from request handling.
               </p>
             </article>
             <article>
-              <p class="timeline-date">모바일</p>
-              <h3><a href="/posts/">Android 현장 기록 흐름 메모</a></h3>
+              <p class="timeline-date">Mobile</p>
+              <h3><a href="/posts/">Android field workflow notes</a></h3>
               <p>
-                현장에서 바로 쓸 수 있을 만큼 빠르게 방문 기록을 남기는 입력
-                흐름을 다음 글에서 다룰 예정입니다.
+                The next piece to write: capturing place visits fast enough to
+                be useful while standing on site.
               </p>
             </article>
           </div>
         </section>
 
         <section class="cta-section">
-          <p class="section-kicker">시작점</p>
-          <h2>실제 판단이 일어나는 순간을 그대로 기록합니다.</h2>
+          <p class="section-kicker">Start here</p>
+          <h2>Publishing decisions as they happen.</h2>
           <p>
-            글 수는 일부러 많지 않게 시작합니다. 각 글이 하나의 실제 기술
-            선택을 나중에 다시 봐도 이해될 만큼 분명하게 설명하는 것을
-            목표로 합니다.
+            The archive is small on purpose. Each entry should explain one real
+            technical choice clearly enough to revisit later.
           </p>
-          <a class="button button-primary" href="/posts/">전체 글 보기</a>
+          <a class="button button-primary" href="/posts/">Browse all posts</a>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p>Placefolio 기술 블로그</p>
-        <p>GitHub Pages 위에서 빠르게 운영할 수 있도록 정적 HTML과 CSS로 구성했습니다.</p>
+        <p>Placefolio Journal</p>
+        <p>Built for GitHub Pages. Written in plain HTML and CSS for a fast first release.</p>
       </footer>
     </div>
   </body>
