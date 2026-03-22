@@ -60,6 +60,8 @@ p {
   position: sticky;
   top: 16px;
   z-index: 10;
+  width: 100%;
+  min-height: 64px;
   margin-bottom: 28px;
   padding: 14px 18px;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -80,6 +82,8 @@ p {
   display: flex;
   align-items: center;
   gap: 18px;
+  min-width: 220px;
+  justify-content: flex-end;
 }
 
 .site-nav a {
@@ -435,14 +439,17 @@ p {
   margin-right: auto;
 }
 
-.archive-shell,
-.article-shell {
-  width: min(980px, calc(100% - 32px));
-}
-
 .archive-list,
 .article-layout {
   margin-top: 22px;
+}
+
+.archive-hero,
+.archive-list,
+.article-layout {
+  width: min(980px, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article {
