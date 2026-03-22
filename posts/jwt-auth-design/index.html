@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JWT Auth Design | Placefolio Journal</title>
+    <meta
+      name="description"
+      content="Designing JWT claims for predictable validation in the Placefolio backend."
+    />
+    <link rel="stylesheet" href="/styles/site.css" />
+  </head>
+  <body>
+    <div class="site-shell article-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Placefolio</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/posts/">Posts</a>
+          <a href="/">Home</a>
+        </nav>
+      </header>
+
+      <main class="article-layout">
+        <article class="article">
+          <p class="eyebrow">Security · March 22, 2026</p>
+          <h1>JWT claims that stay boring in production</h1>
+          <p class="article-lede">
+            Token design is mostly about removing surprises. A small claim set,
+            strict validation rules, and a single issuer policy do more than a
+            long list of clever flags.
+          </p>
+
+          <h2>Minimum useful claim set</h2>
+          <p>
+            For an API-first backend, the claims that usually matter are
+            straightforward: `sub`, `iss`, `aud`, `iat`, `nbf`, and `exp`. The
+            identity is clear, the token source is explicit, and time-based
+            checks stay auditable.
+          </p>
+
+          <h2>What not to overload into the token</h2>
+          <p>
+            Roles, feature flags, and workspace-specific state can become stale
+            faster than token lifetimes suggest. If the server must frequently
+            question that data, it should probably not trust it as static token
+            content.
+          </p>
+
+          <h2>Validation should read like a checklist</h2>
+          <p>
+            Request handling becomes easier when validation remains mechanical:
+            verify signature, verify issuer, verify audience, verify clock-based
+            claims, and only then load application-level authorization context.
+          </p>
+
+          <blockquote>
+            Boring auth is a feature. If engineers can explain rejection logic in
+            one breath, incident handling gets materially easier.
+          </blockquote>
+
+          <h2>Why this matters for Placefolio</h2>
+          <p>
+            The product will likely gain collaboration, invitation, and shared
+            project access. Keeping JWT claims narrow prevents authentication
+            concerns from swallowing authorization concerns too early.
+          </p>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <p>Placefolio Journal</p>
+        <p><a href="/posts/">Back to archive</a></p>
+      </footer>
+    </div>
+  </body>
+  </html>

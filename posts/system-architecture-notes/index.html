@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Architecture Notes | Placefolio Journal</title>
+    <meta
+      name="description"
+      content="Why Placefolio starts with a narrow backend surface: auth, project storage, revisions, and memberships."
+    />
+    <link rel="stylesheet" href="/styles/site.css" />
+  </head>
+  <body>
+    <div class="site-shell article-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Placefolio</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/posts/">Posts</a>
+          <a href="/">Home</a>
+        </nav>
+      </header>
+
+      <main class="article-layout">
+        <article class="article">
+          <p class="eyebrow">Architecture · March 22, 2026</p>
+          <h1>Starting narrow: why Placefolio needs a calm backend before a wide feature set</h1>
+          <p class="article-lede">
+            Early systems fail less often from missing features than from unclear
+            boundaries. The first backend should make a few workflows explicit
+            and leave the rest unclaimed.
+          </p>
+
+          <h2>What the first backend actually owns</h2>
+          <p>
+            The initial surface should stay centered on four things: user
+            identity, project storage, revision history, and collaboration
+            membership. These are the places where ambiguity gets expensive
+            quickly.
+          </p>
+          <p>
+            Everything else should be treated as secondary behavior layered on
+            top. Search, analytics, automation, and rich derived views can come
+            later if the core model remains legible.
+          </p>
+
+          <h2>Why revisions matter early</h2>
+          <p>
+            Place-based work tends to change under uncertainty. A user revisits
+            a listing, updates impressions, replaces assumptions, or reframes a
+            decision entirely. Revision history is not a premium feature here; it
+            is part of the product memory.
+          </p>
+
+          <h2>What we deliberately defer</h2>
+          <p>
+            The backend should not pretend to know every future workflow. Public
+            sharing, notification rules, AI summaries, and complex role systems
+            are all valid future candidates, but they should not distort the
+            first data model.
+          </p>
+          <p>
+            A narrow system is easier to test, easier to reason about, and much
+            easier to migrate when product truth arrives from actual usage rather
+            than planning documents.
+          </p>
+
+          <blockquote>
+            Build the memory of the product first. Add the performance tricks and
+            convenience layers after the memory is trustworthy.
+          </blockquote>
+
+          <h2>Operational effect</h2>
+          <p>
+            This decision keeps the API small, authorization rules inspectable,
+            and entity ownership clear. It also gives the Android client a stable
+            contract while the field workflow is still evolving.
+          </p>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <p>Placefolio Journal</p>
+        <p><a href="/posts/">Back to archive</a></p>
+      </footer>
+    </div>
+  </body>
+  </html>

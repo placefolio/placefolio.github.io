@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placefolio Journal</title>
+    <meta
+      name="description"
+      content="Placefolio engineering journal for product decisions, architecture notes, and field-driven design."
+    />
+    <link rel="stylesheet" href="/styles/site.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Placefolio</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/posts/">Posts</a>
+          <a href="#focus">Focus</a>
+          <a href="#notes">Notes</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Engineering Journal</p>
+            <h1>Building a field notebook for places, visits, and decisions.</h1>
+            <p class="lede">
+              Product thinking, backend architecture, mobile tradeoffs, and the
+              quiet mechanics behind Placefolio.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="/posts/">Read the journal</a>
+              <a class="button button-secondary" href="#featured">See featured notes</a>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-hidden="true">
+            <div class="signal-grid"></div>
+            <div class="signal-orbit signal-orbit-a"></div>
+            <div class="signal-orbit signal-orbit-b"></div>
+            <div class="signal-card signal-card-a">
+              <span>API</span>
+              <strong>JWT boundaries</strong>
+            </div>
+            <div class="signal-card signal-card-b">
+              <span>Android</span>
+              <strong>Offline-first visit logs</strong>
+            </div>
+            <div class="signal-card signal-card-c">
+              <span>Product</span>
+              <strong>Real-estate memory model</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="focus">
+          <div>
+            <p class="section-kicker">What this blog covers</p>
+            <h2>Fewer announcements. More engineering notes that age well.</h2>
+          </div>
+          <div class="focus-list">
+            <article>
+              <h3>Architecture</h3>
+              <p>
+                Why certain tradeoffs win early, what we defer, and where system
+                boundaries stay intentionally narrow.
+              </p>
+            </article>
+            <article>
+              <h3>Product mechanics</h3>
+              <p>
+                How user behavior around visits, neighborhoods, and decisions
+                shapes the actual data model.
+              </p>
+            </article>
+            <article>
+              <h3>Build notes</h3>
+              <p>
+                Tactical implementation logs from backend APIs, Android flows,
+                auth, and release infrastructure.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="featured-section" id="featured">
+          <div class="section-heading">
+            <p class="section-kicker">Featured</p>
+            <h2>First notes from the build.</h2>
+          </div>
+
+          <article class="featured-story">
+            <div class="featured-meta">
+              <span>March 22, 2026</span>
+              <span>Architecture</span>
+            </div>
+            <h3>
+              <a href="/posts/system-architecture-notes/">
+                Starting narrow: why Placefolio needs a calm backend before a wide feature set
+              </a>
+            </h3>
+            <p>
+              A first-pass decision log on keeping auth, project storage, and
+              revisions intentionally simple while the product shape hardens.
+            </p>
+          </article>
+
+          <article class="featured-story">
+            <div class="featured-meta">
+              <span>March 22, 2026</span>
+              <span>Security</span>
+            </div>
+            <h3>
+              <a href="/posts/jwt-auth-design/">
+                JWT claims that stay boring in production
+              </a>
+            </h3>
+            <p>
+              Token design is only useful when validation stays predictable.
+              This note frames the minimum claim set and the checks that matter.
+            </p>
+          </article>
+        </section>
+
+        <section class="notes-section" id="notes">
+          <div class="section-heading">
+            <p class="section-kicker">Current notes</p>
+            <h2>Recent lines of thought.</h2>
+          </div>
+
+          <div class="timeline">
+            <article>
+              <p class="timeline-date">Backend</p>
+              <h3><a href="/posts/system-architecture-notes/">System architecture notes</a></h3>
+              <p>
+                Core domain edges for projects, revisions, members, and the API
+                responsibilities around them.
+              </p>
+            </article>
+            <article>
+              <p class="timeline-date">Security</p>
+              <h3><a href="/posts/jwt-auth-design/">JWT auth design</a></h3>
+              <p>
+                Token issuer, audience, and expiration decisions that remove
+                ambiguity from request handling.
+              </p>
+            </article>
+            <article>
+              <p class="timeline-date">Mobile</p>
+              <h3><a href="/posts/">Android field workflow notes</a></h3>
+              <p>
+                The next piece to write: capturing place visits fast enough to
+                be useful while standing on site.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <p class="section-kicker">Start here</p>
+          <h2>Publishing decisions as they happen.</h2>
+          <p>
+            The archive is small on purpose. Each entry should explain one real
+            technical choice clearly enough to revisit later.
+          </p>
+          <a class="button button-primary" href="/posts/">Browse all posts</a>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Placefolio Journal</p>
+        <p>Built for GitHub Pages. Written in plain HTML and CSS for a fast first release.</p>
+      </footer>
+    </div>
+  </body>
+  </html>

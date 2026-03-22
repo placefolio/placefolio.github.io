@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts | Placefolio Journal</title>
+    <meta
+      name="description"
+      content="Archive of Placefolio engineering notes, architecture decisions, and product mechanics."
+    />
+    <link rel="stylesheet" href="/styles/site.css" />
+  </head>
+  <body>
+    <div class="site-shell archive-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Placefolio</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/posts/">Posts</a>
+          <a href="/">Home</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="archive-hero">
+          <p class="eyebrow">Archive</p>
+          <h1>Engineering notes, one decision at a time.</h1>
+          <p class="lede">
+            Short, durable writing about the systems and workflows behind
+            Placefolio.
+          </p>
+        </section>
+
+        <section class="archive-list">
+          <article class="archive-item">
+            <p class="archive-meta">March 22, 2026 · Architecture</p>
+            <h2>
+              <a href="/posts/system-architecture-notes/">
+                Starting narrow: why Placefolio needs a calm backend before a wide feature set
+              </a>
+            </h2>
+            <p>
+              Scoping the first backend around auth, projects, revisions, and
+              memberships without overfitting to future complexity.
+            </p>
+          </article>
+
+          <article class="archive-item">
+            <p class="archive-meta">March 22, 2026 · Security</p>
+            <h2>
+              <a href="/posts/jwt-auth-design/">
+                JWT claims that stay boring in production
+              </a>
+            </h2>
+            <p>
+              A minimal token structure for predictable validation, clean
+              ownership boundaries, and easier debugging.
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Placefolio Journal</p>
+        <p><a href="/">Return to the homepage</a></p>
+      </footer>
+    </div>
+  </body>
+  </html>
