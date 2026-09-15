@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /COMPANIES/{document} {
+      allow read: if true;
+    }
+    match /JOB_POSTINGS/{document} {
+      allow read: if true;
+    }
+    match /USER_JOBS/{document} {
+      allow read: if true;
+      allow write: if request.auth != null && request.resource.data.user_id == request.auth.uid;
+    }
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

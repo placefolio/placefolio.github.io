@@ -1,0 +1,7 @@
+{
+  "firestore": {
+    "database": "job-board",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}
